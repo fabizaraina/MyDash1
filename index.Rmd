@@ -1,0 +1,142 @@
+---
+title: "Knock and the door will be opened to you."
+
+---
+
+
+### COVID-19 Dashboard Project
+
+The graph below displays the distribution of confirmed and death rates in all countries.
+
+
+```{r ScatterChart2, echo = FALSE, message = FALSE, warning = FALSE, fig.align = 'center'}
+
+# x = reorder(MarketAccount, TotDiff)
+
+# renderPlotly({
+chart1 <- ggplot(data = Corona_summary_LatestDate , #  %>% filter(`Country.Region` %in% input$n_countries)  %>% filter(`Country.Region` == 'UK')
+                 aes(x = DeathRate, y = RecoveryRate, 
+                     # text = sprintf("Country: %s <br>Confirmed: %s <br>Recovery Rate: %s <br>Death Rate: %s", 
+                     #                Country.Region, Confirmed, RecoveryRate, DeathRate),
+                     text = paste0("Country: ", toupper(Country.Region),
+                                  " <br>Confirmed: ", paste(format(round(Confirmed), big.mark = ",")) ,
+                                  " <br>Recovery Rate: ", RecoveryRate, "%",
+                                  " <br>Death Rate: ", DeathRate, "%"),
+                     color = continent)) +
+          geom_point(shape = 17, aes(size = Confirmed), show.legend = FALSE) + # , frame = week(Date)  show.legend = FALSE
+          geom_text(check_overlap = FALSE,
+                    aes(label = Country.Region, size = Confirmed), show.legend = FALSE ) +
+
+          ggtitle(paste("COVID-19 Rates", LatestDate)) +
+          ylab("Recovery Rate (%)") + xlab("Death Rate (%)") +  
+          scale_x_continuous(breaks = seq(0, 30, 5)) +
+          theme_bw()
+
+ggplotly(chart1, tooltip = "text") %>% # animation_slider( currentvalue = list(prefix = "Week Number ", font = list(color = "red")) ) #%>% 
+                                          # animation_opts(1000, easing = "elastic", redraw = TRUE)
+                                       layout(xaxis = list(autorange = TRUE), yaxis = list(autorange = TRUE))
+                                          
+
+# })
+```   
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+library(kableExtra)
+library(data.table)
+library(ggplot2)
+library(plotly)
+library(scales)
+library(gridExtra)
+library(formattable)
+library(gganimate)
+
+library(odbc)
+library(dplyr)
+library(tidyr)
+library(xlsx)
+library(DBI)
+library(RCurl)
+
+library(flexdashboard)
+library(shiny)
+library(shinydashboard)
+library(datasets)
+
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+data(faithful)
+
+CoronaData_Confirmed <- read.csv(text = getURL("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"))
+
+CoronaData_Recovered <- read.csv(text = getURL("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"))
+
+CoronaData_Deaths <- read.csv(text = getURL("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"))
+
+
+Confirmed_ts <- CoronaData_Confirmed %>% gather(colnames(.[, 5:ncol(.)]),
+                                                key = XDate,
+                                                value = Confirmed) %>% 
+                                         mutate(XDate = gsub("X", "", XDate),
+                                                Date = as.Date(XDate, format = "%m.%d.%y")) 
+
+Recovered_ts <- CoronaData_Recovered %>% gather(colnames(.[, 5:ncol(.)]),
+                                                key = XDate,
+                                                value = Recovered) %>% 
+                                         mutate(XDate = gsub("X", "", XDate),
+                                                Date = as.Date(XDate, format = "%m.%d.%y"))
+
+Deaths_ts <- CoronaData_Deaths %>% gather(colnames(.[, 5:ncol(.)]),
+                                                key = XDate,
+                                                value = Deaths) %>% 
+                                   mutate(XDate = gsub("X", "", XDate),
+                                          Date = as.Date(XDate, format = "%m.%d.%y"))
+
+
+Confirmed_byCountry <- Confirmed_ts %>% group_by(Province.State, Country.Region, Date) %>% summarise(Confirmed = max(Confirmed, na.rm = TRUE)) %>% 
+                                        ungroup() %>% 
+                                        group_by(Country.Region, Date) %>% summarise(Confirmed = sum(Confirmed, na.rm = TRUE)) %>% 
+                                        arrange(desc(Confirmed))
+
+Recovered_byCountry <- Recovered_ts %>% group_by(Province.State, Country.Region, Date) %>% summarise(Recovered = max(Recovered, na.rm = TRUE)) %>% 
+                                        ungroup() %>% 
+                                        group_by(Country.Region, Date) %>% summarise(Recovered = sum(Recovered, na.rm = TRUE)) %>% 
+                                        arrange(desc(Recovered))
+
+Deaths_byCountry <- Deaths_ts %>% group_by(Province.State, Country.Region, Date) %>% summarise(Deaths = max(Deaths, na.rm = TRUE)) %>% 
+                                  ungroup() %>% 
+                                  group_by(Country.Region, Date) %>% summarise(Deaths = sum(Deaths, na.rm = TRUE)) %>% 
+                                  arrange(desc(Deaths))
+
+
+StartOfConfirmedCases <- Confirmed_ts %>% filter(Confirmed > 0) %>% 
+                                          group_by(Country.Region) %>% summarise(FirstCaseDate = min(Date, na.rm = TRUE))
+
+FirstDate <- min(StartOfConfirmedCases$FirstCaseDate)
+LatestDate <- max(Confirmed_ts$Date)
+
+map_country_continent <- read.csv("C:\\Users\\Owner\\Documents\\MyAsa2020\\Data\\datasets_countryContinent.csv")
+
+
+GlobalCorona_Summary <- merge(Confirmed_byCountry, Recovered_byCountry, by = c("Country.Region", "Date"), all.x = TRUE, all.y = TRUE) %>%
+                        merge(Deaths_byCountry, by = c("Country.Region", "Date"), all.x = TRUE, all.y = TRUE) %>%
+                        merge(StartOfConfirmedCases, by = c("Country.Region"), all.x = TRUE, all.y = TRUE) %>%
+                        mutate(AsOfDate = LatestDate) %>%
+                        mutate(Country.Region = gsub("\\*", "", Country.Region)) %>%
+                        mutate(RecoveryRate = ifelse(Confirmed == 0, 0, round(Recovered / Confirmed * 100, 2) ),
+                               DeathRate = ifelse(Confirmed == 0, 0, round(Deaths / Confirmed * 100, 2)))
+
+
+GlobalCorona_Summary <- merge(GlobalCorona_Summary, map_country_continent,
+                              by.x = c("Country.Region"), by.y = c("country"), all.x = TRUE) 
+
+
+GlobalCorona_Summary <- GlobalCorona_Summary %>% mutate(Daynum = as.numeric(Date),
+                                                        `Week Number` = as.numeric(strftime(Date, format = "%V")))
+
+
+Corona_summary_LatestDate <- GlobalCorona_Summary %>% filter(Date == LatestDate)
+
+```

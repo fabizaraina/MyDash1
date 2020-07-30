@@ -1,0 +1,148 @@
+---
+title: "Resume"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I believe in hard work and balanced lifestyle. I am a resourceful and innovative mathematician. I am accustomed to working rigorously using critical and analytical thinking skills. With excellent organization skills, presentation abilities, and proven communication skills at all levels.
+
+
+
+#### WORK EXPERIENCE
+
+Data Scientist
+Data Science / Core Enabler Team – AFerry  -  May 2018 - 
+
+I work directly under the chief data science officer. I facilitate strategic decision making with compelling evidence. I also build and maintain dashboards to boost insight capability and efficiency.
+
+   Core Enabling
+
+-	Executed a data lake proof of concept project
+
+-	Sourced and stored company data into the data lake
+
+-	Developed pipelines between data sources, data lake, and BI tools.
+
+
+   Development
+
+-	Built a unified report for a complete visibility of the customers’ journey, conversion funnel, and profitability across all platforms
+
+-	Created analytics summary report in the form of an automated email.
+
+
+   BI Dashboards
+
+-	Produced machine learning models to predict future profit
+
+-	Calculated KPIs and investigated a unique economic denominator 
+
+-	Grouped customer’s behaviour based on frequency and pattern of visit
+
+-	Analysed contributors and detractors, and enabled root cause analysis.
+
+
+Analyst
+Business Optimisation – Servelec Technologies  -  Mar. 2015 – May 2018
+
+I estimated water consumption components. I also produced research for leakage estimation, asset management and monitoring of wastewater treatment works.
+
+   Data Analysis
+
+-	Analysed and modelled daily water consumption, night usage and leakage
+
+-	Developed linear regression models to predict future non-household usage
+
+-	Evaluated methodologies used in water balance reconciliations.
+
+
+   UKWIR Research 
+
+-	Developed a best practice guidance for leakage estimation (Ref. 17/WM/08/59)
+
+-	Built cost-benefit models for asset management by incorporating asset life extension analysis and failure rate models (Ref. 18/RG/05/49)
+
+-	Created alternative approaches to monitor treatment works (Ref. 18/WW/21/17).
+
+
+Research Associate
+University of Strathclyde  -  Glasgow  -  Apr. 2013 - Apr. 2014
+
+This was a one-year post-doctoral position on image compression.
+
+-	Approximated C2 functions using sums of piecewise linear polynomials by creating overlaying partitions in Rd (J. Approx. Theory, vol. 15, pp. 107-123, 2014)
+
+-	Presented optimal Lp and Wp error bounds
+
+-	Created a new image processing algorithm using piecewise constant polynomials and compared results with standard wavelet approaches.
+
+
+####  ACADEMIC BACKGROUND
+
+Doctor of Philosophy in Mathematics
+University of Strathclyde  -  Glasgow  -  Jan. 2009 – Nov. 2013
+
+This research concentrated on approximating functions on a convex domain and developing optimal partitioning of the domain to minimise the estimation errors.
+
+-	Approximated C2 functions using piecewise linear polynomials and achieved optimal L2 and W2 error bounds by creating optimal anisotropic triangulations
+
+-	Approximated C2 functions using piecewise constant polynomials and achieved optimal Lp and Wp error bounds by creating overlaying partitions.
+
+Funding award: Scottish Funding Council (SFC).
+
+
+Master of Science in Mathematics (Cum Laude)
+Stellenbosch University  -  Stellenbosch  -  Jul. 2007 – Dec. 2008
+
+This research-study course focussed on refinable functions, functions which can be expressed by the shifts of their own dilations.
+
+-	Constructed refinable functions using subdivision and cascade algorithm
+
+-	Developed the general form of an interpolatory mask symbol (“Approximation Algorithms For Complex Systems”, vol. 3, pp. 275-292 Springer-Verlag, 2011).
+
+ Funding award: Dept. Mathematical Sciences of Stellenbosch.
+
+
+Postgraduate Diploma in Mathematical Sciences (Cum Laude)
+African Institute for Mathematical Sciences - Muizenberg - Sep. 2006 – Jun. 2007
+
+-	Studied mathematical sciences such as climate modelling, epidemiology, financial mathematics, real and complex analysis, ODEs and PDEs
+
+-	Numerical implementation (Python, Guido Van Robot, wxMaxima, Gnumeric): Various assignments, e.g. Sudoku, Tic-tac-toe.
+
+Funding award: African Institute for Mathematical Sciences (AIMS).
+
+
+Bachelors & Honour's in Mathematics (Cum Laude)
+Université d'Antananarivo  -  Antananarivo  -  Sep. 2001 – Jun. 2005
+
+-	Mathematics: Algebra, Analysis, Geometry, Physics, General Mechanics
+
+-	Numerical implementation (C, C++, Maple).
+
+
+  TRAININGS AND COURSES
+
+Sumo Logic: Pro User & Power User training and certification.
+
+Udemy Online: Machine learning algorithms using Python and R in Data Science.
+
+University of Strathclyde
+
+-	Project management and skills for handling multiple projects
+
+-	Team building and cooperation improvement
+
+-	Assertiveness and conflict management, development of skills to communicate more effectively and influence colleagues.
+
+
+  INTERESTS AND LEISURE
+
+-	Amateur photography: People and Portrait Photography
+
+-	Sports: Play football, squash, table tennis and swimming
+
+-	Travelling: Visited Paris, London, Berlin, Glasgow, Cape Town.

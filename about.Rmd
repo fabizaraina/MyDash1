@@ -1,0 +1,33 @@
+---
+title: "About Me"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- https://rmarkdown.rstudio.com/authoring_basics.html -->
+<!-- https://fabirab.wordpress.com -->
+
+<br>
+<!-- Matthew 7:7 -->
+I believe in hard work and balanced lifestyle. I am a resourceful and innovative mathematician. I am accustomed to working rigorously using critical and analytical thinking skills. With excellent organization skills, presentation abilities, and proven communication skills at all levels.
+
+</br>
+
+
+#### Brief Biography
+
+Mathematics have always been my favorite subject since high school. At the university, my interest for the subject grew as the studies became much more harder and I was up for the challenge. At that time, I was interested in the application of numerical methods and PDEs to solve physical phenomena problems.
+
+
+After finishing my honour’s degree which I successfully completed with distinction, I was accepted at the African Institute for Mathematical Sciences (AIMS) located in Muizenberg, South Africa. My studies at AIMS exposed me to a much wider range of cutting-edge mathematical sciences such as climate modeling, non-linear dynamical systems, epidemiology, computational algebra and financial mathematics.
+
+
+My master's degree was on *refinable* functions and wavelets. What really inspired me was the simple yet powerful idea of a subdivision scheme whereby, from an initial data set, one can generate denser and denser set of points which eventually converge to a smooth surface. Moreover, when an *interpolatory* mask symbol is used the final surface contains the initial data set.
+
+
+The research program for my PhD involves theory developments for local error estimations. These estimations are then used in the approximation of smooth functions by piecewise polynomials. We developed partitioning algorithms and provided optimal asymptotic results. We then extended the results into higher dimensions.
+
+
+I always long for new and exciting challenges. I will greet them with enthusiasm and passion.

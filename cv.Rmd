@@ -1,0 +1,81 @@
+---
+title: "A.F. Rabarison"
+# output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+<!-- Matthew 7:7 -->
+I believe in hard work and balanced lifestyle. I am a resourceful and innovative mathematician. I am accustomed to working rigorously using critical and analytical thinking skills. With excellent organization skills, presentation abilities, and proven communication skills at all levels. Please contact me for a full version.
+
+</br>
+
+
+#### WORK EXPERIENCE
+
+##### **Data Scientist**
+AFerry - Data Science / Core Enabler Team -  May 2018 - 
+
+I work directly under the chief data science officer. I facilitate strategic decision making with compelling evidence. I also build and maintain dashboards to boost insight capability and efficiency.
+
+
+##### **Analyst**
+Servelec Technologies - Business Optimisation -  Mar. 2015 – May 2018
+
+I estimated water consumption components. I also produced research for leakage estimation, asset management and monitoring of wastewater treatment works.
+
+
+##### **Research Associate**
+University of Strathclyde  -  Glasgow  -  Apr. 2013 - Apr. 2014
+
+This was a one-year post-doctoral position on image compression.
+
+
+<br>
+</br>
+
+####  ACADEMIC BACKGROUND
+
+##### **Doctor of Philosophy in Mathematics**
+University of Strathclyde  -  Glasgow  -  Jan. 2009 – Nov. 2013
+
+This research concentrated on approximating functions on a convex domain and developing optimal partitioning of the domain to minimise the estimation errors.
+
+
+##### **Master of Science in Mathematics (Cum Laude)**
+Stellenbosch University  -  Stellenbosch  -  Jul. 2007 – Dec. 2008
+
+This research-study course focussed on refinable functions, functions which can be expressed by the shifts of their own dilations.
+
+
+##### **Postgraduate Diploma in Mathematical Sciences (Cum Laude)**
+African Institute for Mathematical Sciences - Muizenberg - Sep. 2006 – Jun. 2007
+
+
+##### **Bachelors & Honour's in Mathematics (Cum Laude)**
+Université d'Antananarivo  -  Antananarivo  -  Sep. 2001 – Jun. 2005
+
+
+<br>
+</br>
+
+#### TRAININGS AND COURSES
+
+Sumo Logic: Pro User & Power User training and certification.
+
+Udemy Online: Machine learning algorithms using Python and R in Data Science.
+
+
+<br>
+</br>
+
+#### INTERESTS AND LEISURE
+
+-	Amateur photography: People and Portrait Photography
+
+-	Sports: Play football, squash, table tennis and swimming
+
+-	Travelling: Visited Paris, London, Berlin, Glasgow, Cape Town.
